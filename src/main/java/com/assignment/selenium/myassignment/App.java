@@ -17,7 +17,14 @@ public class App
     {
     	//1. Initialize web driver
     	System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
+    	
+    	//System.setProperty("webdriver.chrome.driver","/Users/puneetaggarwal/Documents/Softwares/chromedriver_mac64/chromedriver");
     	ChromeOptions chromeOptions = new ChromeOptions();
+    	chromeOptions.addArguments("headless");
+    	chromeOptions.addArguments("--disable-infobars");
+    	chromeOptions.addArguments("--disable-dev-shm-usage");
+    	chromeOptions.addArguments("--no-sandbox");
+    	
     	WebDriver driver = new ChromeDriver(chromeOptions);
     	
     	//2.open the application url in browser
